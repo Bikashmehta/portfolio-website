@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bikash Mehta — Mechanical Test & Validation Engineer. Design, testing, data analysis, and test rig development." />
+  <title>Bikash Mehta | Portfolio</title>
+
+  <link rel="stylesheet" href="style_apple.css" />
+</head>
+<body>
+  <!-- Top Nav (Apple-like) -->
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="#home" aria-label="Home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-name">Bikash Mehta</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a class="nav-cta" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="page">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Mechanical • Test • Validation</p>
+        <h1 class="hero-title">
+          I design test systems and validate hardware
+          <span class="hero-sub">from components to full vehicle subsystems.</span>
+        </h1>
+
+        <p class="hero-lede">
+          Test Engineer at Tesla. Background in closures validation, robotics cycling, vibration,
+          fatigue testing, RLDA data analysis, and building test rigs end‑to‑end.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="#contact">Hire / collaborate</a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="pill">Fremont, California</div>
+          <a class="pill link" href="mailto:bmehta@siue.edu">bmehta@siue.edu</a>
+          <a class="pill link" href="tel:+14479025572">+1 (447) 902‑5572</a>
+          <a class="pill link" href="https://www.linkedin.com/in/bikashmehta9861" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="island">
+        <div class="section-head">
+          <h2>About</h2>
+          <p>
+            Mechanical engineer by degree and a maker at heart. I’ve led projects from ideation to product—
+            including product design, development, testing, instrumentation, and software-driven data analysis.
+          </p>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>What I do</h3>
+            <ul class="bullets">
+              <li>Plan and execute validation for closures, structures, and subsystems.</li>
+              <li>Design test rigs (mechanical + controls + instrumentation) for repeatable testing.</li>
+              <li>Analyze high-volume sensor data for correlation, fatigue damage, and model validation.</li>
+              <li>Bridge hardware & software: sensors, DAQ, automation, and post-processing.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>What I care about</h3>
+            <ul class="bullets">
+              <li>Clear requirements, clean setups, and trustworthy data.</li>
+              <li>Design for manufacturability (DFM) and testability.</li>
+              <li>Fast iteration loops: build → test → learn → improve.</li>
+              <li>Ownership and teamwork — leading projects to completion.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="island">
+        <div class="section-head">
+          <h2>Experience</h2>
+          <p>Recent roles and key impact.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="t-item">
+            <div class="t-when">Aug 2025 – Present</div>
+            <div class="t-what">
+              <h3>Tesla, Inc. — Test Engineer <span class="muted">| Project Owner</span></h3>
+              <ul class="bullets">
+                <li>Executed striker fatigue validation on closure latch assemblies (50,000+ open/close cycles) for durability and alignment integrity.</li>
+                <li>Led robot-assisted hood cycling tests (100,000+ automated cycles) across thermal and load profiles for hinge robustness and actuation reliability.</li>
+                <li>Performed multi-axis vibration testing on Cybercab roof system (20+ hours, up to 30 g RMS) before HTHE and PTCE aging to confirm structure integrity and NVH stability.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="t-item">
+            <div class="t-when">Jun 2025 – Aug 2025</div>
+            <div class="t-what">
+              <h3>5th Axis Inc. — Mechanical Test Rig Design <span class="muted">| Project Owner</span></h3>
+              <ul class="bullets">
+                <li>Designed a torque test rig for components up to 150 Nm using a high-voltage rotary actuator and precision leadscrew mechanism.</li>
+                <li>Built low-voltage electronics architecture (Teensy MCU, instrumentation amplifier, 24-bit ADC) for accurate torque signal acquisition.</li>
+                <li>Synchronized PWM motor control with torque/position feedback for stable, repeatable long-duration test cycles.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="t-item">
+            <div class="t-when">Sep 2022 – Dec 2023</div>
+            <div class="t-what">
+              <h3>Yatri Motorcycles — Data Analysis & RLDA <span class="muted">| Project Owner & Team Lead</span></h3>
+              <ul class="bullets">
+                <li>Wrote Python tooling to analyze 100M+ sensor datapoints (NumPy, SciPy, Matplotlib) from RLDA campaigns.</li>
+                <li>Achieved ~85% correlation between strain/acceleration/suspension travel and CAE predictions.</li>
+                <li>Performed fatigue damage analysis in nCode (rainflow, histograms, level counting) and generated road-loading block-cycle profiles.</li>
+                <li>Selected multiplexed sigma-delta ADC and high-precision PGA for digitizing strain-gauge signals.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="t-item">
+            <div class="t-when">May 2021 – Aug 2022</div>
+            <div class="t-what">
+              <h3>Yatri Motorcycles — Test Rigs Development <span class="muted">| Project Owner & Team Lead</span></h3>
+              <ul class="bullets">
+                <li>Sized and selected pneumatic compressor, cylinders, load cells, and strain gauges for fatigue test setups.</li>
+                <li>Ran component-level fatigue tests up to 5 million cycles across load profiles; verified results against FEA.</li>
+                <li>Oversaw traction battery shock test rig (50 kg) for half-sine shock: 50 g peak, 6 ms pulse (AIS-048, AIS-156, UN 38.3.4.3).</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="t-item">
+            <div class="t-when">Dec 2020 – Apr 2021</div>
+            <div class="t-what">
+              <h3>Yatri Motorcycles — Jigs & Fixtures <span class="muted">| Project Owner</span></h3>
+              <ul class="bullets">
+                <li>Designed and manufactured five sub-components and a rotatable marriage welding fixture holding ±1 mm tolerance.</li>
+                <li>Generated CNC G-code in Fusion 360 to improve fabrication throughput and repeatability.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="island">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p>Selected work from my portfolio + resume. Click a card for details.</p>
+        </div>
+
+        <div class="project-toolbar">
+          <div class="search-wrap">
+            <input id="projectSearch" type="search" placeholder="Search projects (e.g., fatigue, RLDA, fixture)..." />
+          </div>
+          <div class="chips" id="tagChips" aria-label="Project tags"></div>
+        </div>
+
+        <div class="grid" id="projectGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="island">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p>Tools I use to design, test, automate, and validate.</p>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Engineering</h3>
+            <div class="chips dense">
+              <span class="chip">Test & Validation</span>
+              <span class="chip">Fatigue / Durability</span>
+              <span class="chip">Vibration & NVH</span>
+              <span class="chip">Instrumentation</span>
+              <span class="chip">Strain Gauges</span>
+              <span class="chip">Pneumatics</span>
+              <span class="chip">DFM</span>
+              <span class="chip">CNC / G‑code</span>
+              <span class="chip">Fixture Design</span>
+              <span class="chip">Road Load Data Acquisition</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Software / Tools</h3>
+            <div class="chips dense">
+              <span class="chip">Python (NumPy, SciPy, Matplotlib)</span>
+              <span class="chip">nCode</span>
+              <span class="chip">SOLIDWORKS</span>
+              <span class="chip">Autodesk Fusion 360</span>
+              <span class="chip">AutoCAD</span>
+              <span class="chip">Inventor</span>
+              <span class="chip">ANSYS</span>
+              <span class="chip">MATLAB / Simulink</span>
+              <span class="chip">LabVIEW</span>
+              <span class="chip">NX</span>
+              <span class="chip">CATIA</span>
+              <span class="chip">PTC Creo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="island">
+        <div class="section-head">
+          <h2>Education</h2>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>MS in Mechanical Engineering <span class="muted">(GPA: 4.0)</span></h3>
+            <p class="muted">Kathmandu University, Dhulikhel, Nepal • Jan 2024 – Aug 2025</p>
+            <p class="small">
+              Major courses: Advanced Dynamics, Finite Elements, CAM, Automatic Control, Modern Control,
+              Advanced Fluid Mechanics, Continuum Mechanics, Numerical Analysis.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>BE in Mechanical Engineering <span class="muted">(GPA: 3.53)</span></h3>
+            <p class="muted">Kathmandu University, Dhulikhel, Nepal • Aug 2016 – Dec 2020</p>
+            <p class="small">Activities: SAE BAJA Go‑Kart Championship, Design & Editor Head, AMES.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="island">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>Want to talk testing, validation, or test rig development? Send a note.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Direct</h3>
+            <p class="muted">Fastest ways to reach me.</p>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:bmehta@siue.edu"><span>Email</span><span class="muted">bmehta@siue.edu</span></a>
+              <a class="contact-link" href="tel:+14479025572"><span>Phone</span><span class="muted">+1 (447) 902‑5572</span></a>
+              <a class="contact-link" href="https://www.linkedin.com/in/bikashmehta9861" target="_blank" rel="noreferrer"><span>LinkedIn</span><span class="muted">/in/bikashmehta9861</span></a>
+              <a class="contact-link" href="#projects"><span>Projects</span><span class="muted">See selected work</span></a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Message</h3>
+            <form class="form" id="contactForm">
+              <div class="row">
+                <input name="name" type="text" placeholder="Your name" autocomplete="name" required />
+                <input name="email" type="email" placeholder="Your email" autocomplete="email" required />
+              </div>
+              <textarea name="message" placeholder="What would you like to work on?" required></textarea>
+              <button class="btn primary" type="submit">Send</button>
+              <p class="form-note muted" id="success-message" role="status" aria-live="polite"></p>
+              <p class="form-note muted">This form shows a success message (no backend). If you want, I can add EmailJS or a simple server endpoint.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Bikash Mehta. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" aria-label="Close" data-close="true">✕</button>
+        <div class="modal-body">
+          <p class="eyebrow" id="modalMeta"></p>
+          <h3 id="modalTitle"></h3>
+          <p id="modalSummary" class="muted"></p>
+          <ul id="modalBullets" class="bullets"></ul>
+          <div id="modalTags" class="chips dense" aria-label="Project tags"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script_apple.js"></script>
+</body>
+</html>
