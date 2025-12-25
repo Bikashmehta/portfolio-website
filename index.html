@@ -6,7 +6,7 @@
   <meta name="description" content="Bikash Mehta — Mechanical Test & Validation Engineer. Design, testing, data analysis, and test rig development." />
   <title>Bikash Mehta | Portfolio</title>
 
-  <link rel="stylesheet" href="style_apple.css" />
+  <link rel="stylesheet" href="style_apple_v2.css" />
 </head>
 <body>
   <!-- Top Nav (Apple-like) -->
@@ -23,6 +23,7 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -48,6 +49,8 @@
 
         <div class="hero-actions">
           <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="Resume_Test and Validation_Bikash_Mehta - updated.pdf" download>Download resume</a>
+          <a class="btn" href="Bikash_portfolio_mechanical.pdf" target="_blank" rel="noreferrer">Open portfolio PDF</a>
           <a class="btn" href="#contact">Hire / collaborate</a>
         </div>
 
@@ -97,7 +100,54 @@
       </div>
     </section>
 
-    <!-- Experience -->
+    
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <div class="island">
+        <div class="section-head">
+          <h2>Portfolio highlights</h2>
+          <p>Quick snapshots from my mechanical portfolio. Click to zoom.</p>
+        </div>
+
+        <div class="gallery" aria-label="Portfolio gallery">
+          <button class="gallery-btn" type="button" id="galleryPrev" aria-label="Scroll left">‹</button>
+          <div class="gallery-track" id="galleryTrack">
+            <figure class="gallery-item">
+              <img src="assets/portfolio_page_1.png" alt="Portfolio page 1 preview" loading="lazy" />
+              <figcaption class="muted">Highlights</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/portfolio_page_2.png" alt="Portfolio page 2 preview" loading="lazy" />
+              <figcaption class="muted">Projects</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/portfolio_page_3.png" alt="Portfolio page 3 preview" loading="lazy" />
+              <figcaption class="muted">Design & analysis</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/portfolio_page_4.png" alt="Portfolio page 4 preview" loading="lazy" />
+              <figcaption class="muted">Testing</figcaption>
+            </figure>
+          </div>
+          <button class="gallery-btn" type="button" id="galleryNext" aria-label="Scroll right">›</button>
+        </div>
+
+        <div class="gallery-note muted">
+          Want the full PDF? <a class="link" href="Bikash_portfolio_mechanical.pdf" target="_blank" rel="noreferrer">Open portfolio</a>
+          or <a class="link" href="Bikash_portfolio_mechanical.pdf" download>download it</a>.
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close="true"></div>
+      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+        <button class="icon-btn" type="button" id="lightboxClose" aria-label="Close preview">✕</button>
+        <img id="lightboxImg" alt="" />
+      </div>
+    </div>
+<!-- Experience -->
     <section id="experience" class="section">
       <div class="island">
         <div class="section-head">
@@ -320,6 +370,6 @@
 
   </main>
 
-  <script src="script_apple.js"></script>
+  <script src="script_apple_v2.js"></script>
 </body>
 </html>
