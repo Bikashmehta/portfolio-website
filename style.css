@@ -142,6 +142,11 @@ body {
   padding: 28px;
   border: 1px solid var(--border);
 }
+/* Space between stacked islands */
+.island {
+  margin-bottom: 48px;
+}
+
 
 .card {
   position: relative;
