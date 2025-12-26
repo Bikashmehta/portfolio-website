@@ -368,4 +368,13 @@ body {
     flex-direction: column;
     gap: 10px;
   }
+
+/* --- Force Message label + textarea alignment --- */
+.field { display: block !important; width: 100% !important; }
+.field .label { display: block !important; margin: 0 0 8px !important; }
+.field textarea,
+.field input { display: block !important; width: 100% !important; }
+
+/* Ensure the Message field sits below the Name/Email row */
+.row { margin-bottom: 12px; }
 }
