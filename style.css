@@ -144,11 +144,11 @@ body {
 }
 /* Gap between islands on About page */
 .about-page .island {
-  margin-bottom: 72px;
+  margin-bottom: 48px;
 }
 /* Gap between islands on About page */
 .contact-page .island {
-  margin-bottom: 72px;
+  margin-bottom: 48px;
 }
 /* Space between stacked islands */
 .island {
