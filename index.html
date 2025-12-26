@@ -1,395 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bikash Mehta — Test & Validation Engineer. Design, testing, automation, and data-driven validation for mechanical systems." />
-  <title>Bikash Mehta | Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Inter (Apple-like clean sans). If you prefer fully offline, remove this and it will fall back to system fonts. -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bikash Mehta</title>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Top Nav -->
-  <header class="topbar" id="top">
-    <nav class="nav">
-      <a class="brand" href="#home" aria-label="Home">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span class="brand-name">Bikash Mehta</span>
-      </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<!-- Top navigation -->
+<header class="topbar">
+  <a class="brand" href="index.html">
+    Bikash Mehta
+  </a>
 
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact" class="pill">Contact</a>
-      </div>
-    </nav>
-  </header>
+  <nav class="nav">
+    <a href="about.html">About me</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <!-- Hero (clear homepage) -->
-  <main id="home" class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">Test • Validation • Design</p>
-        <h1 class="headline">
-          Mechanical Test & Validation Engineer
-          <span class="headline-sub">building reliable closure systems and test rigs.</span>
-        </h1>
-        <p class="subhead">
-          I lead durability validation, automation, and data-driven testing—from concept to compliant, production-ready hardware.
-        </p>
+<main class="wrap">
 
-        <div class="cta-row">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#contact">Hire / Collaborate</a>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
 
-        <div class="quick-links">
-          <a href="assets/docs/resume-bikash-mehta.pdf" class="chip" target="_blank" rel="noreferrer">Download Resume</a>
-          <a href="assets/docs/portfolio-bikash-mehta.pdf" class="chip" target="_blank" rel="noreferrer">View Portfolio PDF</a>
-          <a href="https://www.linkedin.com/in/bikashmehta9861" class="chip" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
+    <!-- Profile photo -->
+    <img
+      src="assets/images/profile.jpeg"
+      alt="Bikash Mehta"
+      class="profile-photo"
+    />
 
-        <div class="highlights">
-          <div class="highlight">
-            <div class="h-title">Durability</div>
-            <div class="h-meta">50k–100k+ cycle testing</div>
-          </div>
-          <div class="highlight">
-            <div class="h-title">Automation</div>
-            <div class="h-meta">robot-assisted & DAQ</div>
-          </div>
-          <div class="highlight">
-            <div class="h-title">Tooling</div>
-            <div class="h-meta">jigs, fixtures, rigs</div>
-          </div>
-        </div>
-      </div>
+    <h1 class="hero-title">
+      Mechanical Test & Validation Engineer
+    </h1>
 
-      <div class="hero-media">
-        <!-- Drop a photo at assets/images/profile.jpg (recommended 800x1000). -->
-        <div class="portrait" role="img" aria-label="Bikash Mehta portrait">
-          <img src="assets/images/profile.jpg" alt="Bikash Mehta" onerror="this.closest('.portrait').classList.add('portrait-fallback'); this.remove();" />
-          <div class="portrait-fallback-ui">
-            <div class="pf-badge">Add your photo</div>
-            <div class="pf-hint">Place <span>assets/images/profile.jpg</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <p class="hero-sub">
+      Design · Test · Validate
+    </p>
 
-    <button class="scroll-indicator" type="button" onclick="scrollToSection('about')" aria-label="Scroll to About">
-      <span></span>
-    </button>
-  </main>
-
-  <!-- About (short, not resume-y) -->
-  <section id="about" class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>About</h2>
-        <p>
-          Based in Fremont, CA. I enjoy turning requirements into robust test plans, fixtures, and repeatable validation data.
-        </p>
-      </div>
-
-      <div class="grid two">
-        <article class="card island">
-          <h3>What I do</h3>
-          <ul class="list">
-            <li>Component & system validation: fatigue, cycling, shock, thermal/load profiles</li>
-            <li>Test automation & data acquisition (DAQ), instrumentation, reporting</li>
-            <li>Mechanical design: CAD, GD&T, DFM/DFMEA, fixture/rig design</li>
-            <li>Correlation & verification: test vs FEA, durability modeling inputs (RLDA)</li>
-          </ul>
-        </article>
-
-        <article class="card island">
-          <h3>Tools</h3>
-          <div class="tags">
-            <span class="tag">SOLIDWORKS</span>
-            <span class="tag">ANSYS</span>
-            <span class="tag">nCode</span>
-            <span class="tag">MATLAB/Simulink</span>
-            <span class="tag">LabVIEW</span>
-            <span class="tag">Python</span>
-            <span class="tag">Fusion 360</span>
-            <span class="tag">Creo / CATIA</span>
-          </div>
-
-          <div class="mini">
-            <div class="mini-row">
-              <span class="mini-k">Email</span>
-              <a class="mini-v" href="mailto:bmehta@siue.edu">bmehta@siue.edu</a>
-            </div>
-            <div class="mini-row">
-              <span class="mini-k">Phone</span>
-              <a class="mini-v" href="tel:+14479025572">+1 (447) 902-5572</a>
-            </div>
-            <div class="mini-row">
-              <span class="mini-k">Location</span>
-              <span class="mini-v">Fremont, California</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
   </section>
 
-  <!-- Work (clean cards + expandable details) -->
-  <section id="work" class="section section-muted">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Work</h2>
-        <p>Recent roles and the kind of problems I like solving.</p>
-      </div>
+  <!-- ISLAND CARDS -->
+  <section class="grid">
 
-      <div class="grid two">
-        <article class="card island">
-          <div class="card-top">
-            <div>
-              <h3>Tesla, Inc.</h3>
-              <p class="muted">Test Engineer — Project Owner • Aug 2025 – Present</p>
-            </div>
-            <span class="badge">Closures</span>
-          </div>
-          <ul class="list">
-            <li>Striker fatigue validation on closure latch assemblies (50,000+ cycles).</li>
-            <li>Robot-assisted hood cycling (100,000+ cycles) across thermal/load profiles.</li>
-            <li>Built repeatable test setups, instrumentation, and reporting for OEM compliance.</li>
-          </ul>
-        </article>
+    <a href="about.html" class="card">
+      <h2>About</h2>
+      <p>Who I am & what I do</p>
+      <span class="arrow">→</span>
+    </a>
 
-        <article class="card island">
-          <div class="card-top">
-            <div>
-              <h3>Yatri Motorcycles</h3>
-              <p class="muted">Validation Engineer / Test & Rig Owner • 2021 – 2023</p>
-            </div>
-            <span class="badge">EV</span>
-          </div>
-          <ul class="list">
-            <li>Road Load Data Acquisition (RLDA) and durability inputs.</li>
-            <li>Designed test rigs (fatigue, bump/shock) and verified against simulations.</li>
-            <li>Led test execution and cross-functional closure of design issues.</li>
-          </ul>
-        </article>
-      </div>
+    <a href="projects.html" class="card">
+      <h2>Projects</h2>
+      <p>Selected engineering work</p>
+      <span class="arrow">→</span>
+    </a>
 
-      <details class="accordion">
-        <summary>See full experience & education (quick)</summary>
-        <div class="acc-body">
-          <div class="grid two">
-            <div class="card island">
-              <h3>Additional experience</h3>
-              <ul class="list">
-                <li><strong>Yatri Motorcycles</strong> — Jigs & Fixture (Dec 2020 – Apr 2021): rotatable welding fixture (±1 mm), CNC G-code using Fusion 360.</li>
-              </ul>
-            </div>
-            <div class="card island">
-              <h3>Education</h3>
-              <ul class="list">
-                <li><strong>MS Mechanical Engineering</strong>, Southern Illinois University Edwardsville (GPA 4.0) • 2024–2025</li>
-                <li><strong>BE Mechanical Engineering</strong>, Kathmandu University (GPA 3.53) • 2016–2020</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-  </section>
+    <a href="contact.html" class="card">
+      <h2>Contact</h2>
+      <p>Get in touch</p>
+      <span class="arrow">→</span>
+    </a>
 
-  <!-- Projects (from portfolio + resume) -->
-  <section id="projects" class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Featured Projects</h2>
-        <p>Selected work combining my portfolio and resume projects.</p>
-      </div>
-
-      <div class="project-grid">
-        <!-- Yatri (Portfolio PDF) -->
-        <article class="card island project">
-          <div class="project-head">
-            <h3>Road Load Data Acquisition (RLDA)</h3>
-            <span class="pill small">Yatri Motorcycles</span>
-          </div>
-          <p class="muted">Data capture to model real-world durability conditions and inform validation planning.</p>
-          <ul class="list tight">
-            <li>Defined load cases, instrumentation, and test routes.</li>
-            <li>Supported durability modeling and test correlation.</li>
-          </ul>
-        </article>
-
-        <article class="card island project">
-          <div class="project-head">
-            <h3>Data Acquisition System (DAQ)</h3>
-            <span class="pill small">Yatri Motorcycles</span>
-          </div>
-          <p class="muted">Built reliable sensing + logging setup for repeatable engineering data.</p>
-          <ul class="list tight">
-            <li>Sensor integration, calibration, and data logging workflow.</li>
-            <li>Improved turnaround for analysis and reporting.</li>
-          </ul>
-        </article>
-
-        <article class="card island project">
-          <div class="project-head">
-            <h3>Pneumatic Fatigue Test Rig</h3>
-            <span class="pill small">Rig Design</span>
-          </div>
-          <p class="muted">Rig to run high-cycle fatigue testing under controlled profiles.</p>
-          <ul class="list tight">
-            <li>Designed fixture interfaces and safety checks.</li>
-            <li>Enabled repeatable endurance validation.</li>
-          </ul>
-        </article>
-
-        <article class="card island project">
-          <div class="project-head">
-            <h3>Bump Rig</h3>
-            <span class="pill small">Durability</span>
-          </div>
-          <p class="muted">Mechanical setup to reproduce road-induced shock/loading conditions.</p>
-          <ul class="list tight">
-            <li>Load profile definition and hardware setup.</li>
-            <li>Used for durability screening and iteration.</li>
-          </ul>
-        </article>
-
-        <article class="card island project">
-          <div class="project-head">
-            <h3>Jigs & Fixtures (Welding + CNC)</h3>
-            <span class="pill small">Tooling</span>
-          </div>
-          <p class="muted">Designed and manufactured jigs/fixtures to improve precision and throughput.</p>
-          <ul class="list tight">
-            <li>Rotatable marriage welding fixture (±1 mm tolerance).</li>
-            <li>CNC programs (G-code) generated in Fusion 360.</li>
-          </ul>
-        </article>
-
-        <!-- Resume projects -->
-        <article class="card island project">
-          <div class="project-head">
-            <h3>Handlebar Design & Analysis</h3>
-            <span class="pill small">Design + FEA</span>
-          </div>
-          <p class="muted">Designed and analyzed a motorbike handlebar for strength and durability targets.</p>
-          <ul class="list tight">
-            <li>CAD + validation-driven design decisions.</li>
-            <li>Stress/deflection analysis to guide geometry.</li>
-          </ul>
-        </article>
-
-        <article class="card island project">
-          <div class="project-head">
-            <h3>Line-Following Dish Serving Robot</h3>
-            <span class="pill small">Mechatronics</span>
-          </div>
-          <p class="muted">Autonomous line-following platform for controlled dish delivery.</p>
-          <ul class="list tight">
-            <li>Mechanical integration + iterative prototyping.</li>
-            <li>Testing, tuning, and demonstration-ready build.</li>
-          </ul>
-        </article>
-      </div>
-
-      <!-- Optional gallery (user can drop images in assets/images/projects/) -->
-      <div class="gallery">
-        <div class="gallery-head">
-          <h3>Gallery</h3>
-          <p class="muted">Drop images into <code>assets/images/projects/</code> and add filenames in <code>script.js</code>.</p>
-        </div>
-        <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section section-muted">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p>For roles in test & validation, closures, durability, fixtures, and product development.</p>
-      </div>
-
-      <div class="grid two">
-        <article class="card island">
-          <h3>Quick reach</h3>
-          <div class="mini">
-            <div class="mini-row">
-              <span class="mini-k">Email</span>
-              <a class="mini-v" href="mailto:bmehta@siue.edu">bmehta@siue.edu</a>
-            </div>
-            <div class="mini-row">
-              <span class="mini-k">Phone</span>
-              <a class="mini-v" href="tel:+14479025572">+1 (447) 902-5572</a>
-            </div>
-            <div class="mini-row">
-              <span class="mini-k">LinkedIn</span>
-              <a class="mini-v" href="https://www.linkedin.com/in/bikashmehta9861" target="_blank" rel="noreferrer">/in/bikashmehta9861</a>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="btn primary" href="assets/docs/resume-bikash-mehta.pdf" target="_blank" rel="noreferrer">Resume</a>
-            <a class="btn" href="assets/docs/portfolio-bikash-mehta.pdf" target="_blank" rel="noreferrer">Portfolio PDF</a>
-          </div>
-        </article>
-
-        <article class="card island">
-          <h3>Send a message</h3>
-          <p class="muted">Uses Formspree if configured; otherwise opens your mail app.</p>
-
-          <form class="form" id="contactForm">
-            <div class="row">
-              <label>
-                <span>Name</span>
-                <input name="name" type="text" placeholder="Your name" required />
-              </label>
-              <label>
-                <span>Email</span>
-                <input name="email" type="email" placeholder="you@email.com" required />
-              </label>
-            </div>
-
-            <label>
-              <span>Message</span>
-              <textarea name="message" rows="5" placeholder="What would you like to build or validate?" required></textarea>
-            </label>
-
-            <button class="btn primary" type="submit">Send</button>
-            <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
-          </form>
-        </article>
-      </div>
-    </div>
   </section>
 
   <footer class="footer">
-    <div class="wrap footer-inner">
-      <p>© <span id="year"></span> Bikash Mehta</p>
-      <div class="footer-links">
-        <a href="#top">Back to top</a>
-      </div>
-    </div>
+    © <span id="year"></span> Bikash Mehta
   </footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
-    <img id="lightboxImg" alt="Expanded project image" />
-  </div>
+</main>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
