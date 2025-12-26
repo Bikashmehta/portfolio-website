@@ -1,6 +1,7 @@
 /* =========================
    Global variables
 ========================= */
+body { background: #ff0000 !important; }
 :root {
   --bg: #f5f5f7;
   --fg: #1d1d1f;
