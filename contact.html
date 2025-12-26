@@ -24,54 +24,50 @@
   <main class="wrap">
     <section class="pagehead">
       <h1 class="page-title">Contact</h1>
-      <p class="page-sub">Please reach out to me at bimehta@tesla.com</p>
+      <p class="page-sub">Email: <a class="inline-link" href="mailto:bimehta@tesla.com">bimehta@tesla.com</a></p>
     </section>
 
     <section class="island">
       <h2>Links</h2>
       <div class="links">
-        <!-- Replace these -->
         <a class="btn primary" href="mailto:bimehta@tesla.com">Email</a>
         <a class="btn" href="https://www.linkedin.com/in/bikashmehta9861/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="btn" href="assets/docs/resume-bikash-mehta.pdf" target="_blank" rel="noreferrer">Resume</a>
       </div>
-      <p class="hint">
-        <code>bimehta@tesla.com</code>
-      </p>
     </section>
 
-<section class="card form-card">
-  <h2 class="form-title">Send a quick message</h2>
-  <p class="form-sub">I'll get back to you soon.</p>
+    <section class="card form-card">
+      <h2 class="form-title">Send a message</h2>
+      <p class="form-sub">I’ll respond as soon as possible.</p>
 
-  <form class="form" onsubmit="return mailtoFallback(event)">
-    <div class="row">
-      <label class="field">
-        <span class="label">Name</span>
-        <input id="name" type="text" placeholder="Your name" required />
-      </label>
+      <form class="form" onsubmit="return mailtoFallback(event)">
+        <div class="row">
+          <label class="field">
+            <span class="label">Name</span>
+            <input id="name" type="text" placeholder="Your name" required />
+          </label>
 
-      <label class="field">
-        <span class="label">Email</span>
-        <input id="email" type="email" placeholder="your@email.com" required />
-      </label>
-    </div>
+          <label class="field">
+            <span class="label">Email</span>
+            <input id="email" type="email" placeholder="your@email.com" required />
+          </label>
+        </div>
 
-    <label class="field">
-      <span class="label">Message</span>
-      <textarea id="msg" placeholder="What can I help you with?" required></textarea>
-    </label>
+        <label class="field">
+          <span class="label">Message</span>
+          <textarea id="msg" placeholder="Write your message here..." required></textarea>
+        </label>
 
-    <div class="actions">
-      <button class="btn primary" type="submit">
-        Send message
-        <span class="btn-icon">↗</span>
-      </button>
+        <div class="actions">
+          <button class="btn primary" type="submit">
+            Send
+            <span class="btn-icon">↗</span>
+          </button>
 
-      <p class="sent" id="sent" aria-live="polite"></p>
-    </div>
-  </form>
-</section>
+          <p class="sent" id="sent" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
 
     <footer class="footer">
       <a class="muted-link" href="index.html">← Back home</a>
