@@ -351,8 +351,9 @@ body {
   margin: 0 auto;
   padding: 22px 0 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 6px;
   border-top: 1px solid var(--border);
   font-size: 14px;
   color: var(--muted);
