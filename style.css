@@ -142,10 +142,19 @@ body {
   padding: 28px;
   border: 1px solid var(--border);
 }
+/* Gap between islands on About page */
+.about-page .island {
+  margin-bottom: 72px;
+}
+/* Gap between islands on About page */
+.contact-page .island {
+  margin-bottom: 72px;
+}
 /* Space between stacked islands */
 .island {
   margin-bottom: 48px;
 }
+
 
 
 .card {
