@@ -244,7 +244,7 @@ body {
 }
 
 /* =========================
-   Contact Form (FINAL FIXED)
+   Contact Form
 ========================= */
 .form-card {
   max-width: 820px;
@@ -275,6 +275,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   width: 100%;
+  margin-bottom: 12px; /* keeps Message lower */
 }
 
 .field {
@@ -285,15 +286,22 @@ body {
   min-width: 0;
 }
 
-/* ✅ pushes Message down a bit */
 .form .field + .field {
-  margin-top: 12px;
+  margin-top: 12px; /* more spacing before Message */
 }
 
 .label {
+  display: block;
+  margin: 0 0 8px;
   font-size: 14px;
   font-weight: 600;
   color: var(--muted);
+}
+
+.field input,
+.field textarea {
+  display: block;
+  width: 100%;
 }
 
 .form input,
@@ -368,13 +376,4 @@ body {
     flex-direction: column;
     gap: 10px;
   }
-
-/* --- Force Message label + textarea alignment --- */
-.field { display: block !important; width: 100% !important; }
-.field .label { display: block !important; margin: 0 0 8px !important; }
-.field textarea,
-.field input { display: block !important; width: 100% !important; }
-
-/* Ensure the Message field sits below the Name/Email row */
-.row { margin-bottom: 12px; }
 }
