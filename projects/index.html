@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects • Bikash Mehta</title>
 
-  <link rel="stylesheet" href="/style.css?v=12" />
+  <link rel="stylesheet" href="/style.css?v=13" />
 </head>
 
 <body>
@@ -14,73 +14,145 @@
       <span>Bikash Mehta</span>
     </a>
 
-  <nav class="nav">
-    <a href="/education/">Education</a>
-    <a href="/experience/">Work Experience</a>
-    <a href="/projects/">Projects</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
-  </nav>
+    <nav class="nav">
+      <a href="/education/">Education</a>
+      <a href="/experience/">Work Experience</a>
+      <a class="active" href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
   </header>
 
   <main class="wrap">
     <section class="pagehead">
       <h1 class="page-title">Projects</h1>
-      <p class="page-sub">Selected work</p>
+      <p class="page-sub">Selected work — click a card to view details.</p>
     </section>
 
-    <section class="grid projects">
-      <article class="card card-project">
+    <section class="grid projects-grid">
+      <!-- Card 1 -->
+      <button class="card card-project" type="button" data-project="p1">
         <div class="card-head">
-          <h2>Validation Test Program</h2>
-          <span class="pill">DV/PV</span>
+          <h2>P1 Chassis & Product Development</h2>
+          <span class="pill">Yatri</span>
         </div>
-        <p class="card-text">
-          Planned and executed validation tests, documented results, and supported design improvements.
-        </p>
+        <p class="card-text">Chassis concept, DFM, suspension integration, and crash protection focus.</p>
         <div class="mini">
-          <span class="chip">Test plan</span>
-          <span class="chip">Data</span>
-          <span class="chip">Report</span>
+          <span class="chip">CAD</span>
+          <span class="chip">DFM</span>
+          <span class="chip">Chassis</span>
         </div>
-      </article>
+        <span class="arrow">→</span>
+      </button>
 
-      <article class="card card-project">
+      <!-- Card 2 -->
+      <button class="card card-project" type="button" data-project="rlda">
         <div class="card-head">
-          <h2>Fixture / Setup Improvement</h2>
-          <span class="pill">Lab</span>
+          <h2>Road Load Data Acquisition (RLDA)</h2>
+          <span class="pill">Durability</span>
         </div>
-        <p class="card-text">
-          Improved test setup repeatability and reduced test time through fixture and procedure updates.
-        </p>
+        <p class="card-text">Sensored road testing, correlation to CAE, and durability model validation.</p>
         <div class="mini">
-          <span class="chip">Fixture</span>
-          <span class="chip">Repeatability</span>
-          <span class="chip">Efficiency</span>
+          <span class="chip">Strain</span>
+          <span class="chip">Accel</span>
+          <span class="chip">LVDT</span>
         </div>
-      </article>
+        <span class="arrow">→</span>
+      </button>
 
-      <article class="card card-project">
+      <!-- Card 3 -->
+      <button class="card card-project" type="button" data-project="daq">
         <div class="card-head">
-          <h2>Failure Analysis</h2>
-          <span class="pill">RCA</span>
+          <h2>Data Acquisition System (DAQ)</h2>
+          <span class="pill">Electronics</span>
         </div>
-        <p class="card-text">
-          Performed root cause analysis with clear corrective actions and verification testing.
-        </p>
+        <p class="card-text">High-speed, low-noise multi-channel DAQ for strain gauges, accelerometers, and LVDTs.</p>
         <div class="mini">
-          <span class="chip">RCA</span>
-          <span class="chip">Corrective action</span>
-          <span class="chip">Verification</span>
+          <span class="chip">ADC</span>
+          <span class="chip">Noise</span>
+          <span class="chip">SD Logging</span>
         </div>
-      </article>
+        <span class="arrow">→</span>
+      </button>
+
+      <!-- Card 4 -->
+      <button class="card card-project" type="button" data-project="fatigue">
+        <div class="card-head">
+          <h2>Pneumatic Fatigue Test Rig</h2>
+          <span class="pill">Rig</span>
+        </div>
+        <p class="card-text">Accelerated component durability rig with variable loading profiles.</p>
+        <div class="mini">
+          <span class="chip">Pneumatics</span>
+          <span class="chip">Fatigue</span>
+          <span class="chip">Fixtures</span>
+        </div>
+        <span class="arrow">→</span>
+      </button>
+
+      <!-- Card 5 -->
+      <button class="card card-project" type="button" data-project="bump">
+        <div class="card-head">
+          <h2>Bump Rig</h2>
+          <span class="pill">Vehicle</span>
+        </div>
+        <p class="card-text">Vehicle-level accelerated durability testing with controlled motion.</p>
+        <div class="mini">
+          <span class="chip">Durability</span>
+          <span class="chip">Bearing</span>
+          <span class="chip">Loads</span>
+        </div>
+        <span class="arrow">→</span>
+      </button>
+
+      <!-- Card 6 -->
+      <button class="card card-project" type="button" data-project="fixture">
+        <div class="card-head">
+          <h2>Jigs & Fixtures</h2>
+          <span class="pill">Manufacturing</span>
+        </div>
+        <p class="card-text">Production-ready welding fixtures to improve repeatability and dimensional control.</p>
+        <div class="mini">
+          <span class="chip">Inventor</span>
+          <span class="chip">Weld</span>
+          <span class="chip">Tolerance</span>
+        </div>
+        <span class="arrow">→</span>
+      </button>
     </section>
-    
+
     <footer class="footer">
-      <a class="muted-link" href="/">← Back home</a>
-      <span>© <span id="year"></span> Bikash Mehta</span>
+      © <span id="year"></span> <strong>Bikash Mehta</strong>
     </footer>
   </main>
+
+  <!-- Modal -->
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="1"></div>
+
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-top">
+        <div class="modal-titlewrap">
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-meta" id="modalMeta"></p>
+        </div>
+        <button class="modal-close" type="button" aria-label="Close" data-close="1">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img class="modal-heroimg" id="modalHeroImg" alt="" />
+          <div class="modal-thumbs" id="modalThumbs"></div>
+        </div>
+
+        <div class="modal-content">
+          <p class="modal-desc" id="modalDesc"></p>
+          <ul class="modal-list" id="modalList"></ul>
+          <div class="modal-tags" id="modalTags"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="/script.js"></script>
 </body>
