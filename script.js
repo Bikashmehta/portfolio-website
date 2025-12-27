@@ -1,40 +1,6 @@
-// Auto-update year in footer
 document.addEventListener("DOMContentLoaded", () => {
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
-});
-
-// Contact form: mailto fallback (no backend required)
-function mailtoFallback(e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name")?.value?.trim() || "";
-  const email = document.getElementById("email")?.value?.trim() || "";
-  const msg = document.getElementById("msg")?.value?.trim() || "";
-
-  const sent = document.getElementById("sent");
-  if (sent) sent.textContent = "Opening your email app…";
-
-  // ✅ CHANGE THIS to your real email
-  const to = "bimehta@tesla.com";
-
-  const subject = encodeURIComponent(`Portfolio message from ${name || "Visitor"}`);
-  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}\n`);
-
-  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-
-  setTimeout(() => {
-    if (e.target && typeof e.target.reset === "function") e.target.reset();
-    if (sent) sent.textContent = "Draft created — hit send in your email app.";
-  }, 700);
-
-  return false;
-}
-
-// ===== Projects modal (ONLY ONE COPY) =====
-(() => {
   const modal = document.getElementById("projectModal");
-  if (!modal) return;
+  if (!modal) return; // not on projects page
 
   const titleEl = document.getElementById("modalTitle");
   const metaEl = document.getElementById("modalMeta");
@@ -47,80 +13,34 @@ function mailtoFallback(e) {
   const data = {
     p1: {
       title: "P1 Chassis & Product Development",
-      meta: "Yatri Motorcycles • Project owner & team lead • 06/2021 – 12/2022",
-      desc: "Designed the motorbike chassis and supporting architecture with DFM and reliability in mind, focusing on maneuverability and battery protection.",
+      meta: "Yatri Motorcycles • Project Owner",
+      desc: "Chassis concept, DFM, packaging, and suspension integration.",
       bullets: [
-        "Designed a dual-cradle chassis concept to protect the battery and improve stiffness.",
-        "Aligned suspension integration approach for comfort and control (telescopic forks + twin rear shocks).",
-        "Built CAD models for full bike, chassis, and panels to support packaging and manufacturability."
+        "Dual-cradle chassis design for stiffness and battery protection",
+        "Suspension integration for ride comfort",
+        "Full-vehicle CAD and packaging"
       ],
-      tags: ["CAD", "Chassis", "DFM", "Packaging"],
-      images: ["/assets/images/projects/p1-bike.jpg", "/assets/images/projects/p1-chassis.jpg"]
+      tags: ["CAD", "DFM", "Chassis"],
+      images: [
+        "/assets/images/projects/p1-bike.jpg",
+        "/assets/images/projects/p1-chassis.jpg"
+      ]
     },
 
     rlda: {
       title: "Road Load Data Acquisition (RLDA)",
-      meta: "Yatri Motorcycles • Project owner & team lead • 06/2022 – 04/2023",
-      desc: "Durability program to collect and process road data, correlate to CAE, and validate durability performance using sensors and controlled testing.",
+      meta: "Durability Testing",
+      desc: "Road data acquisition and CAE correlation.",
       bullets: [
-        "Instrumented vehicle with strain gauges, accelerometers, and LVDTs for correlation runs.",
-        "Ran controlled tests before road testing; then collected real-road damage data.",
-        "Processed and filtered acquired data to fine-tune MBD/FEA models; achieved >90% correlation in initial trials."
+        "Vehicle instrumentation with strain & accelerometers",
+        "Controlled and real-world testing",
+        "Durability correlation"
       ],
-      tags: ["Durability", "Correlation", "Sensors", "Data Processing"],
-      images: ["/assets/images/projects/rlda-daq.jpg", "/assets/images/projects/rlda-bump.jpg"]
-    },
-
-    daq: {
-      title: "Data Acquisition System (DAQ)",
-      meta: "Yatri Motorcycles • Project owner • 06/2021 – 02/2023",
-      desc: "Built a high-speed, low-noise DAQ workflow to acquire multi-channel analog signals for durability testing and validation.",
-      bullets: [
-        "Targeted high-speed acquisition and low-noise analog capture.",
-        "Selected ADC + microcontroller and implemented SD logging.",
-        "Validated multi-channel data capture for sensors."
-      ],
-      tags: ["DAQ", "ADC", "Signal", "Embedded"],
-      images: ["/assets/images/projects/daq-board.jpg"]
-    },
-
-    fatigue: {
-      title: "Pneumatic Fatigue Test Rig",
-      meta: "Yatri Motorcycles • Project owner & team lead • 12/2020 – 12/2021",
-      desc: "Designed and developed a pneumatic fatigue rig for accelerated component-level durability testing with variable profiles.",
-      bullets: [
-        "Created fatigue criteria and rig design from scratch.",
-        "Enabled accelerated tests for frame/swingarm/components.",
-        "Improved throughput with variable cycle profiles."
-      ],
-      tags: ["Fatigue", "Pneumatics", "Fixtures", "Durability"],
-      images: ["/assets/images/projects/fatigue-rig.jpg"]
-    },
-
-    bump: {
-      title: "Bump Rig",
-      meta: "Yatri Motorcycles • Project owner & team lead • 02/2021 – 06/2022",
-      desc: "Vehicle-level accelerated durability testing rig designed to allow free motion while controlling loads.",
-      bullets: [
-        "Allowed longitudinal and vertical translation motion.",
-        "Handled side loads using bearings and liners.",
-        "Configured weighted loading to simulate real use."
-      ],
-      tags: ["Rig Design", "Durability", "Loads", "Mechanisms"],
-      images: ["/assets/images/projects/bump-rig.jpg"]
-    },
-
-    fixture: {
-      title: "Jigs & Fixtures",
-      meta: "Yatri Motorcycles • Project owner & team lead • 08/2021 – 05/2022",
-      desc: "Production-ready welding fixtures to improve repeatability and manufacturing quality for chassis builds.",
-      bullets: [
-        "Designed fixtures from requirements (repeatability first).",
-        "Designed in Autodesk Inventor; fixtures manufactured in-house.",
-        "Achieved ±1 mm tolerance on welded chassis with rotatable weld table."
-      ],
-      tags: ["Fixtures", "Welding", "Inventor", "Tolerance"],
-      images: ["/assets/images/projects/fixture.jpg"]
+      tags: ["Durability", "Sensors", "Data"],
+      images: [
+        "/assets/images/projects/rlda-daq.jpg",
+        "/assets/images/projects/rlda-bump.jpg"
+      ]
     }
   };
 
@@ -133,37 +53,33 @@ function mailtoFallback(e) {
     descEl.textContent = p.desc;
 
     listEl.innerHTML = "";
-    p.bullets.forEach((b) => {
+    p.bullets.forEach(text => {
       const li = document.createElement("li");
-      li.textContent = b;
+      li.textContent = text;
       listEl.appendChild(li);
     });
 
     tagsEl.innerHTML = "";
-    p.tags.forEach((t) => {
+    p.tags.forEach(tag => {
       const span = document.createElement("span");
       span.className = "chip";
-      span.textContent = t;
+      span.textContent = tag;
       tagsEl.appendChild(span);
     });
 
-    const imgs = p.images || [];
-    heroImg.src = imgs[0] || "";
-    heroImg.alt = p.title;
-
+    heroImg.src = p.images[0];
     thumbs.innerHTML = "";
-    imgs.forEach((src, i) => {
-      const im = document.createElement("img");
-      im.className = "modal-thumb" + (i === 0 ? " is-active" : "");
-      im.src = src;
-      im.alt = p.title + " image " + (i + 1);
-      im.loading = "lazy";
-      im.addEventListener("click", () => {
+
+    p.images.forEach((src, i) => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.className = "modal-thumb" + (i === 0 ? " is-active" : "");
+      img.addEventListener("click", () => {
         heroImg.src = src;
-        [...thumbs.querySelectorAll(".modal-thumb")].forEach((x) => x.classList.remove("is-active"));
-        im.classList.add("is-active");
+        [...thumbs.children].forEach(t => t.classList.remove("is-active"));
+        img.classList.add("is-active");
       });
-      thumbs.appendChild(im);
+      thumbs.appendChild(img);
     });
 
     modal.classList.add("is-open");
@@ -177,15 +93,15 @@ function mailtoFallback(e) {
     document.body.style.overflow = "";
   }
 
-  document.querySelectorAll("[data-project]").forEach((btn) => {
-    btn.addEventListener("click", () => openModal(btn.dataset.project));
+  document.querySelectorAll("[data-project]").forEach(card => {
+    card.addEventListener("click", () => openModal(card.dataset.project));
   });
 
-  modal.addEventListener("click", (e) => {
-    if (e.target && e.target.dataset && e.target.dataset.close) closeModal();
+  modal.addEventListener("click", e => {
+    if (e.target.dataset.close) closeModal();
   });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeModal();
   });
-})();
+});
