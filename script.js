@@ -215,3 +215,126 @@ function mailtoFallback(e) {
     if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
   });
 })();
+/* =========================
+   Project modal (Projects page)
+========================= */
+(() => {
+  const modal = document.getElementById("projectModal");
+  if (!modal) return; // not on projects page
+
+  const titleEl = document.getElementById("modalTitle");
+  const metaEl = document.getElementById("modalMeta");
+  const descEl = document.getElementById("modalDesc");
+  const listEl = document.getElementById("modalList");
+  const tagsEl = document.getElementById("modalTags");
+  const heroImg = document.getElementById("modalHeroImg");
+  const thumbs = document.getElementById("modalThumbs");
+
+  const data = {
+    p1: {
+      title: "Validation Test Program",
+      meta: "DV / PV",
+      desc: "Planned and executed validation tests, documented results, and supported design improvements.",
+      bullets: [
+        "Defined DV and PV test plans",
+        "Executed validation testing",
+        "Documented results and design improvements"
+      ],
+      tags: ["DV/PV", "Testing", "Validation"],
+      images: [
+        "/assets/images/projects/validation-1.jpg",
+        "/assets/images/projects/validation-2.jpg"
+      ]
+    },
+
+    fixture: {
+      title: "Fixture / Setup Improvement",
+      meta: "Lab",
+      desc: "Improved test setup repeatability and reduced test time.",
+      bullets: [
+        "Designed fixture improvements",
+        "Increased repeatability",
+        "Reduced test cycle time"
+      ],
+      tags: ["Fixture", "Repeatability", "Efficiency"],
+      images: [
+        "/assets/images/projects/fixture-1.jpg"
+      ]
+    },
+
+    rca: {
+      title: "Failure Analysis",
+      meta: "RCA",
+      desc: "Performed root cause analysis with corrective action verification.",
+      bullets: [
+        "Failure investigation",
+        "Root cause identification",
+        "Corrective action validation"
+      ],
+      tags: ["RCA", "Analysis", "Verification"],
+      images: [
+        "/assets/images/projects/rca-1.jpg"
+      ]
+    }
+  };
+
+  function openModal(key) {
+    const p = data[key];
+    if (!p) return;
+
+    titleEl.textContent = p.title;
+    metaEl.textContent = p.meta;
+    descEl.textContent = p.desc;
+
+    listEl.innerHTML = "";
+    p.bullets.forEach(b => {
+      const li = document.createElement("li");
+      li.textContent = b;
+      listEl.appendChild(li);
+    });
+
+    tagsEl.innerHTML = "";
+    p.tags.forEach(t => {
+      const span = document.createElement("span");
+      span.className = "chip";
+      span.textContent = t;
+      tagsEl.appendChild(span);
+    });
+
+    heroImg.src = p.images[0];
+    thumbs.innerHTML = "";
+
+    p.images.forEach((src, i) => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.className = "modal-thumb" + (i === 0 ? " is-active" : "");
+      img.addEventListener("click", () => {
+        heroImg.src = src;
+        [...thumbs.children].forEach(t => t.classList.remove("is-active"));
+        img.classList.add("is-active");
+      });
+      thumbs.appendChild(img);
+    });
+
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll("[data-project]").forEach(card => {
+    card.addEventListener("click", () => openModal(card.dataset.project));
+  });
+
+  modal.addEventListener("click", e => {
+    if (e.target.dataset.close) closeModal();
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeModal();
+  });
+})();
+
