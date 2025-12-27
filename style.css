@@ -450,4 +450,30 @@ body {
   color: var(--muted);
   font-size: 16px;
 }
+/* ===== Mobile header spacing improvement ===== */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px 24px;
+    gap: 12px; /* space between name and nav */
+  }
+
+  .brand {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 20px; /* row gap | column gap */
+  }
+
+  .nav a {
+    margin-left: 0; /* remove desktop spacing */
+    font-size: 16px;
+    line-height: 1.6; /* MORE vertical spacing */
+  }
+}
 
