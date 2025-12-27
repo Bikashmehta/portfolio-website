@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Work • Bikash Mehta</title>
+
+  <link rel="stylesheet" href="/style.css?v=9" />
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Home">
+      <span>Bikash Mehta</span>
+    </a>
+
+    <nav class="nav">
+      <a href="/about/">About</a>
+      <a href="/projects/">Projects</a>
+      <a class="active" href="/experience/">Work</a>
+      <a href="/education/">Education</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="pagehead">
+      <h1 class="page-title">Work Experience</h1>
+      <p class="page-sub">Hands-on testing, validation, and test rig development.</p>
+    </section>
+
+    <section class="island">
+      <div class="xp-head">
+        <h2 class="xp-title">Test Engineer — Tesla, Inc.</h2>
+        <span class="pill">Aug 2025 – Present</span>
+      </div>
+      <ul class="xp-list">
+        <li>Executed striker fatigue validation on closure latch assemblies (50,000+ open/close cycles) to verify durability and alignment integrity.</li>
+        <li>Led robot-assisted hood cycling tests (100,000+ automated cycles) across thermal and load profiles to validate hinge robustness.</li>
+        <li>Performed vibration testing on the Cybercab roof system (20+ hours, multi-axis profiles up to 30 g RMS) before aging tests to confirm structural integrity and NVH stability.</li>
+      </ul>
+    </section>
+
+    <section class="island">
+      <div class="xp-head">
+        <h2 class="xp-title">Mechanical Test Rig Design — 5th Axis Inc.</h2>
+        <span class="pill">Jun 2025 – Aug 2025</span>
+      </div>
+      <ul class="xp-list">
+        <li>Designed a torque test rig capable of testing up to 150 Nm using a high-voltage rotary actuator and precision leadscrew mechanism.</li>
+        <li>Implemented low-voltage electronics architecture (Teensy microcontroller, instrumentation amplifier, 24-bit ADC) for accurate torque signal acquisition.</li>
+        <li>Synchronized PWM motor control with torque/position feedback to ensure repeatability and stability during extended test cycles.</li>
+      </ul>
+    </section>
+
+    <section class="island">
+      <div class="xp-head">
+        <h2 class="xp-title">Data Analysis & RLDA — Yatri Motorcycles</h2>
+        <span class="pill">Sep 2022 – Dec 2023</span>
+      </div>
+      <ul class="xp-list">
+        <li>Wrote Python code to analyze 100M+ data points from sensors during RLDA using NumPy, SciPy, and Matplotlib.</li>
+        <li>Achieved ~85% correlation of strain, acceleration, and suspension travel with CAE models.</li>
+        <li>Performed fatigue damage analysis in nCode (rainflow, histogram, level counting) and created block-cycle loading profiles.</li>
+        <li>Selected high-speed ADC and supported selection of a high-precision PGA for strain-gauge digitization.</li>
+      </ul>
+    </section>
+
+    <section class="island">
+      <div class="xp-head">
+        <h2 class="xp-title">Design & Development of Test Rigs — Yatri Motorcycles</h2>
+        <span class="pill">May 2021 – Aug 2022</span>
+      </div>
+      <ul class="xp-list">
+        <li>Selected and sized pneumatic compressor/cylinder/components, load cell, and strain gauges for fatigue testing setup.</li>
+        <li>Performed component tests (5 million cycles) across load profiles and verified results against FEA simulations.</li>
+        <li>Oversaw a battery shock test rig design for a 50 kg traction battery (half-sine shock, 50 g peak, 6 ms) per AIS-048, AIS-156, and UN 38.3.4.3.</li>
+      </ul>
+    </section>
+
+    <section class="island">
+      <div class="xp-head">
+        <h2 class="xp-title">Jigs & Fixtures — Yatri Motorcycles</h2>
+        <span class="pill">Dec 2020 – Apr 2021</span>
+      </div>
+      <ul class="xp-list">
+        <li>Designed and manufactured multiple sub-components and a rotatable welding fixture with ±1 mm tolerance.</li>
+        <li>Generated CNC G-code using Fusion 360 for jigs and fixture components.</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> <strong>Bikash Mehta</strong>
+    </footer>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
