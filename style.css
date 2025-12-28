@@ -432,12 +432,12 @@ body {
 
 /* ===== Company logo next to company name ===== */
 .company-logo{
-  height: 28px;
+  height: 40px;
   width: auto;
   margin-left: 10px;
   vertical-align: middle;
   object-fit: contain;
-  opacity: 0.95;
+  opacity: 1;
 }
 
 @media (min-width: 900px){
