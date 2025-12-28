@@ -299,10 +299,11 @@ body {
   width: 100%;
   min-width: 0;
 }
-
+/*
 .form .field + .field {
   margin-top: 12px; /* more spacing before Message */
 }
+*/
 
 .label {
   display: block;
@@ -670,6 +671,43 @@ body {
   max-width: 100%;
   display: block;
   margin: 0;
+}
+
+/* Mobile: stack */
+@media (max-width: 900px){
+  .form .row{ grid-template-columns: 1fr; }
+}
+/* ===== FINAL: Contact form field alignment ===== */
+.form .row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.form .row .field{
+  display: block;    /* key fix: label behaves like a block grid-item */
+  width: 100%;
+  min-width: 0;
+}
+
+.form .row .field input{
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+/* Message field always full width */
+.form > .field{
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.form > .field textarea{
+  width: 100%;
+  max-width: 100%;
+  display: block;
 }
 
 /* Mobile: stack */
