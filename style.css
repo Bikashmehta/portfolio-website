@@ -53,8 +53,6 @@ body {
   font-weight: 600;
 }
 
-.brand-dot { display: none; }
-
 .nav a {
   margin-left: 20px;
   text-decoration: none;
@@ -143,12 +141,7 @@ body {
   border: 1px solid var(--border);
 }
 
-/* Space between stacked islands */
 .island { margin-bottom: 48px; }
-
-/* page-specific (optional) */
-.about-page .island { margin-bottom: 48px; }
-.contact-page .island { margin-bottom: 48px; }
 
 .card {
   position: relative;
@@ -171,14 +164,6 @@ body {
 .card p {
   margin-top: 10px;
   font-size: 17px;
-  color: var(--muted);
-}
-
-.arrow {
-  position: absolute;
-  right: 24px;
-  bottom: 22px;
-  font-size: 20px;
   color: var(--muted);
 }
 
@@ -220,174 +205,6 @@ body {
 
 .btn.primary:hover { background: #000; }
 
-.btn-icon {
-  display: inline-flex;
-  margin-left: 6px;
-  transition: transform .15s ease;
-}
-
-.btn.primary:hover .btn-icon { transform: translate(2px, -2px); }
-
-/* =========================
-   Links section
-========================= */
-.links {
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.inline-link {
-  color: var(--fg);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.inline-link:hover { border-bottom-color: rgba(0, 0, 0, 0.55); }
-
-/* =========================
-   Contact Form (FINAL ALIGNMENT)
-========================= */
-.form-card {
-  max-width: 820px;
-  margin: 0 auto 70px;
-}
-
-.form-title {
-  margin: 0;
-  font-size: 26px;
-}
-
-.form-sub {
-  margin: 10px 0 0;
-  color: var(--muted);
-  font-size: 18px;
-}
-
-.form {
-  margin-top: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-}
-
-/* Name + Email row */
-.form .row{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  align-items: start;
-  width: 100%;
-  margin-bottom: 12px;
-}
-
-.form .row .field{
-  display: block;
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-}
-
-.label {
-  display: block;
-  margin: 0 0 10px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--muted);
-}
-
-.form input,
-.form textarea{
-  width: 100%;
-  max-width: 100%;
-  display: block;
-  margin: 0;
-  padding: 16px;
-  font-size: 18px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  background: #fff;
-  color: var(--fg);
-  outline: none;
-  transition: box-shadow .15s ease, border-color .15s ease;
-}
-
-/* Message field */
-.form > .field{
-  display: block;
-  width: 100%;
-  min-width: 0;
-}
-
-.form textarea {
-  min-height: 170px;
-  resize: vertical;
-}
-
-.form input:focus,
-.form textarea:focus {
-  border-color: rgba(0, 102, 204, 0.35);
-  box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.10);
-}
-
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.sent {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* =========================
-   Footer
-========================= */
-.footer {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 22px 0 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  border-top: 1px solid var(--border);
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.muted-link {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.muted-link:hover { color: var(--fg); }
-
-/* =========================
-   Chips (About/Education)
-========================= */
-.chips{
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.chip{
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--border);
-  font-size: 14px;
-  color: var(--fg);
-}
-
 /* =========================
    Experience page helpers
 ========================= */
@@ -402,6 +219,10 @@ body {
 .xp-title{
   margin: 0;
   font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .pill{
@@ -424,195 +245,41 @@ body {
   line-height: 1.7;
 }
 
-.edu-meta{
-  margin: 10px 0 0;
-  color: var(--muted);
-  font-size: 16px;
+/* ✅ Company logo + link */
+.logo-link{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-/* ===== Company logo next to company name ===== */
 .company-logo{
-  height: 40px;
+  height: 34px;
   width: auto;
-  margin-left: 10px;
-  vertical-align: middle;
   object-fit: contain;
-  opacity: 1;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: transform .15s ease, opacity .15s ease;
 }
 
-@media (min-width: 900px){
-  .company-logo{ height: 32px; }
+.company-logo:hover{
+  transform: translateY(-1px) scale(1.06);
+  opacity: 0.95;
 }
 
 /* =========================
-   Projects grid + modal
+   Footer
 ========================= */
-.projects-grid .card-project{
-  appearance: none;
-  border: 1px solid var(--border);
-  background: var(--card);
-  text-align: left;
-  cursor: pointer;
-  width: 100%;
-}
-
-.projects-grid .card-project:focus{
-  outline: none;
-  box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.12);
-  border-color: rgba(0, 102, 204, 0.35);
-}
-
-.card-head{
+.footer {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 22px 0 40px;
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.card-text{
-  margin: 0;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.6;
-}
-
-.mini{
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* Modal */
-.modal{
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 999;
-}
-
-.modal.is-open{ display: block; }
-
-.modal-backdrop{
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px);
-}
-
-.modal-panel{
-  position: relative;
-  width: min(1040px, calc(100% - 32px));
-  margin: 18px auto;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
-  overflow: hidden;
-}
-
-.modal-top{
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 18px 20px;
-  border-bottom: 1px solid var(--border);
-  background: rgba(255,255,255,0.9);
-}
-
-.modal-title{
-  margin: 0;
-  font-size: 22px;
-  letter-spacing: -0.2px;
-}
-
-.modal-meta{
-  margin: 6px 0 0;
-  color: var(--muted);
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-top: 1px solid var(--border);
   font-size: 14px;
-}
-
-.modal-close{
-  border: 1px solid var(--border);
-  background: #fff;
-  border-radius: 999px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.modal-body{
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 18px;
-  padding: 18px 20px 22px;
-}
-
-.modal-gallery{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.modal-heroimg{
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  background: #f2f2f2;
-}
-
-.modal-thumbs{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.modal-thumb{
-  width: 86px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  cursor: pointer;
-  opacity: 0.85;
-}
-
-.modal-thumb.is-active{
-  opacity: 1;
-  box-shadow: 0 0 0 5px rgba(0, 102, 204, 0.12);
-  border-color: rgba(0, 102, 204, 0.35);
-}
-
-.modal-desc{
-  margin: 0 0 12px;
   color: var(--muted);
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-.modal-list{
-  margin: 0;
-  padding-left: 18px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.modal-tags{
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-@media (max-width: 900px){
-  .modal-panel{ margin: 12px auto; }
-  .modal-body{ grid-template-columns: 1fr; }
-  .modal-heroimg{ height: 260px; }
 }
 
 /* =========================
@@ -620,13 +287,9 @@ body {
 ========================= */
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; }
-  .footer {
-    flex-direction: column;
-    gap: 10px;
-  }
+  .footer { flex-direction: column; gap: 10px; }
 }
 
-/* Mobile header spacing improvement */
 @media (max-width: 768px) {
   .topbar {
     flex-direction: column;
@@ -635,10 +298,7 @@ body {
     gap: 12px;
   }
 
-  .brand {
-    font-size: 22px;
-    margin-bottom: 6px;
-  }
+  .brand { font-size: 22px; margin-bottom: 6px; }
 
   .nav {
     display: flex;
@@ -648,12 +308,6 @@ body {
 
   .nav a {
     margin-left: 0;
-    font-size: 16px;
     line-height: 1.6;
   }
-}
-
-/* Contact form mobile stack */
-@media (max-width: 900px){
-  .form .row{ grid-template-columns: 1fr; }
 }
