@@ -1,7 +1,10 @@
+// ===== Footer year =====
 document.addEventListener("DOMContentLoaded", () => {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 });
+
+// ===== Projects modal (runs only on Projects page) =====
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("projectModal");
   if (!modal) return;
@@ -122,15 +125,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const imgs = p.images || [];
     heroImg.src = imgs[0] || "";
-    thumbs.innerHTML = "";
+    heroImg.alt = p.title;
 
+    thumbs.innerHTML = "";
     imgs.forEach((src, i) => {
       const im = document.createElement("img");
       im.className = "modal-thumb" + (i === 0 ? " is-active" : "");
       im.src = src;
+      im.alt = `${p.title} image ${i + 1}`;
+      im.loading = "lazy";
       im.addEventListener("click", () => {
         heroImg.src = src;
-        [...thumbs.querySelectorAll(".modal-thumb")].forEach(x => x.classList.remove("is-active"));
+        [...thumbs.querySelectorAll(".modal-thumb")].forEach((x) =>
+          x.classList.remove("is-active")
+        );
         im.classList.add("is-active");
       });
       thumbs.appendChild(im);
@@ -152,10 +160,57 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   modal.addEventListener("click", (e) => {
-    if (e.target.dataset.close) closeModal();
+    if (e.target && e.target.dataset && e.target.dataset.close) closeModal();
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
+});
+
+// ===== EmailJS (runs only on Contact page) =====
+// IMPORTANT:
+// 1) Your contact page must include the EmailJS CDN script in <head>
+//    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+// 2) Your form must be: <form id="contactForm" ...>
+// 3) Your inputs must have name="" fields: from_name, reply_to, message
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  if (!form) return;
+
+  const sent = document.getElementById("sent");
+  const btn = document.getElementById("sendBtn");
+
+  // ✅ Replace these with your EmailJS keys
+  const PUBLIC_KEY = "PASTE_PUBLIC_KEY_HERE";
+  const SERVICE_ID = "PASTE_SERVICE_ID_HERE";
+  const TEMPLATE_ID = "PASTE_TEMPLATE_ID_HERE";
+
+  // If EmailJS didn't load, show a helpful message
+  if (typeof emailjs === "undefined") {
+    if (sent) sent.textContent = "Email service not loaded (EmailJS missing).";
+    console.error("EmailJS not found. Add the EmailJS CDN script in <head> of contact page.");
+    return;
+  }
+
+  emailjs.init({ publicKey: PUBLIC_KEY });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (sent) sent.textContent = "Sending…";
+    if (btn) btn.disabled = true;
+
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form);
+
+      if (sent) sent.textContent = "Message sent ✅";
+      form.reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      if (sent) sent.textContent = "Failed to send ❌ Please try again.";
+    } finally {
+      if (btn) btn.disabled = false;
+    }
   });
 });

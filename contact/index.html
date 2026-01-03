@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact • Bikash Mehta</title>
 
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <link rel="stylesheet" href="/style.css?v=20" />
 </head>
 
@@ -14,16 +17,16 @@
       <span>Bikash Mehta</span>
     </a>
 
-  <nav class="nav">
-    <a href="/education/">Education</a>
-    <a href="/experience/">Work Experience</a>
-    <a href="/projects/">Projects</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
-  </nav>
+    <nav class="nav">
+      <a href="/education/">Education</a>
+      <a href="/experience/">Work Experience</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+      <a class="active" href="/contact/">Contact</a>
+    </nav>
   </header>
 
-  <main class="wrap">
+  <main class="wrap contact-page">
     <section class="pagehead">
       <h1 class="page-title">Contact</h1>
       <p class="page-sub">
@@ -45,26 +48,27 @@
       <h2 class="form-title">Send a message</h2>
       <p class="form-sub">I’ll respond as soon as possible.</p>
 
-      <form class="form" onsubmit="return mailtoFallback(event)">
+      <!-- IMPORTANT: id + name fields for EmailJS -->
+      <form class="form" id="contactForm">
         <div class="row">
           <label class="field">
             <span class="label">Name</span>
-            <input id="name" type="text" placeholder="Your name" required />
+            <input id="name" name="from_name" type="text" placeholder="Your name" required />
           </label>
 
           <label class="field">
             <span class="label">Email</span>
-            <input id="email" type="email" placeholder="your@email.com" required />
+            <input id="email" name="reply_to" type="email" placeholder="your@email.com" required />
           </label>
         </div>
 
         <label class="field">
           <span class="label">Message</span>
-          <textarea id="msg" placeholder="Write your message here..." required></textarea>
+          <textarea id="msg" name="message" placeholder="Write your message here..." required></textarea>
         </label>
 
         <div class="actions">
-          <button class="btn primary" type="submit">
+          <button class="btn primary" type="submit" id="sendBtn">
             Send <span class="btn-icon">↗</span>
           </button>
 
@@ -79,6 +83,6 @@
     </footer>
   </main>
 
-  <script src="/script.js?v=16"></script>
+  <script src="/script.js?v=20"></script>
 </body>
 </html>
