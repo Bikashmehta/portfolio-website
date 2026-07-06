@@ -181,19 +181,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const sent = document.getElementById("sent");
   const btn = document.getElementById("sendBtn");
 
-  // ✅ Replace these with your EmailJS keys
+  // Replace these with your EmailJS keys if you want to use EmailJS directly.
   const PUBLIC_KEY = "PASTE_PUBLIC_KEY_HERE";
   const SERVICE_ID = "PASTE_SERVICE_ID_HERE";
   const TEMPLATE_ID = "PASTE_TEMPLATE_ID_HERE";
+  const hasEmailjsConfig =
+    PUBLIC_KEY !== "PASTE_PUBLIC_KEY_HERE" &&
+    SERVICE_ID !== "PASTE_SERVICE_ID_HERE" &&
+    TEMPLATE_ID !== "PASTE_TEMPLATE_ID_HERE";
 
-  // If EmailJS didn't load, show a helpful message
-  if (typeof emailjs === "undefined") {
-    if (sent) sent.textContent = "Email service not loaded (EmailJS missing).";
-    console.error("EmailJS not found. Add the EmailJS CDN script in <head> of contact page.");
-    return;
-  }
-
-  emailjs.init({ publicKey: PUBLIC_KEY });
+  const nameInput = form.querySelector('input[name="from_name"]');
+  const emailInput = form.querySelector('input[name="reply_to"]');
+  const messageInput = form.querySelector('textarea[name="message"]');
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -201,7 +200,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (sent) sent.textContent = "Sending…";
     if (btn) btn.disabled = true;
 
+    if (!hasEmailjsConfig || typeof emailjs === "undefined") {
+      const subject = encodeURIComponent(`Website contact from ${nameInput?.value?.trim() || "a visitor"}`);
+      const body = encodeURIComponent(
+        `Name: ${nameInput?.value?.trim() || ""}\nEmail: ${emailInput?.value?.trim() || ""}\n\n${messageInput?.value?.trim() || ""}`
+      );
+
+      window.location.href = `mailto:bimehta@tesla.com?subject=${subject}&body=${body}`;
+      if (sent) sent.textContent = "Opening your email app…";
+      form.reset();
+      if (btn) btn.disabled = false;
+      return;
+    }
+
     try {
+      emailjs.init({ publicKey: PUBLIC_KEY });
       await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form);
 
       if (sent) sent.textContent = "Message sent ✅";
