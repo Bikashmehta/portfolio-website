@@ -168,12 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ===== EmailJS (runs only on Contact page) =====
-// IMPORTANT:
-// 1) Your contact page must include the EmailJS CDN script in <head>
-//    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-// 2) Your form must be: <form id="contactForm" ...>
-// 3) Your inputs must have name="" fields: from_name, reply_to, message
+// ===== Contact form submission =====
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   if (!form) return;
@@ -181,46 +176,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const sent = document.getElementById("sent");
   const btn = document.getElementById("sendBtn");
 
-  // Replace these with your EmailJS keys if you want to use EmailJS directly.
-  const PUBLIC_KEY = "PASTE_PUBLIC_KEY_HERE";
-  const SERVICE_ID = "PASTE_SERVICE_ID_HERE";
-  const TEMPLATE_ID = "PASTE_TEMPLATE_ID_HERE";
-  const hasEmailjsConfig =
-    PUBLIC_KEY !== "PASTE_PUBLIC_KEY_HERE" &&
-    SERVICE_ID !== "PASTE_SERVICE_ID_HERE" &&
-    TEMPLATE_ID !== "PASTE_TEMPLATE_ID_HERE";
-
-  const nameInput = form.querySelector('input[name="from_name"]');
-  const emailInput = form.querySelector('input[name="reply_to"]');
-  const messageInput = form.querySelector('textarea[name="message"]');
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     if (sent) sent.textContent = "Sending…";
     if (btn) btn.disabled = true;
 
-    if (!hasEmailjsConfig || typeof emailjs === "undefined") {
-      const subject = encodeURIComponent(`Website contact from ${nameInput?.value?.trim() || "a visitor"}`);
-      const body = encodeURIComponent(
-        `Name: ${nameInput?.value?.trim() || ""}\nEmail: ${emailInput?.value?.trim() || ""}\n\n${messageInput?.value?.trim() || ""}`
-      );
-
-      window.location.href = `mailto:bimehta@tesla.com?subject=${subject}&body=${body}`;
-      if (sent) sent.textContent = "Opening your email app…";
-      form.reset();
-      if (btn) btn.disabled = false;
-      return;
-    }
-
     try {
-      emailjs.init({ publicKey: PUBLIC_KEY });
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form);
+      const response = await fetch(form.action, {
+        method: form.method || "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form)
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
 
       if (sent) sent.textContent = "Message sent ✅";
       form.reset();
     } catch (err) {
-      console.error("EmailJS error:", err);
+      console.error("Contact form error:", err);
       if (sent) sent.textContent = "Failed to send ❌ Please try again.";
     } finally {
       if (btn) btn.disabled = false;
